@@ -1,4 +1,3 @@
-
 ### 🧩 What  
 **Angular**: JS frontend framework  
 - Collection of pkgs and rules  
@@ -15,6 +14,26 @@ It helps for complex projects
 
 ---
 
+### 🔄 Angular Evolution  
+- Stable framework with strong **backward compatibility**  
+- **Angular 14 & 15 (2022)**: Introduced **standalone components**  
+- **Angular 16**: Introduced **signals** for reactive state management  
+
+---
+
+### 🚀 Creating a New Angular Project  
+- You **cannot** create plain `.html` and `.js` files manually — Angular uses its own structure  
+- Install Angular CLI globally:
+  ```bash
+  npm install -g @angular/cli
+  ```
+- Create a new project:
+  ```bash
+  ng new first-app
+  ```
+
+---
+
 ### 🛠️ Utility Libraries  
 **Lodash**: Data Manipulation  
 - Utility functions for arrays, objects, and more  
@@ -22,5 +41,4 @@ It helps for complex projects
 **Moment.js / Day.js**:  
 - Date/time formatting and manipulation  
 
---- 
-
+---
