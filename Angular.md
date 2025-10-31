@@ -50,3 +50,18 @@ bootstrapApplication(App, appConfig)=> added providers  and use comp decorator t
 index.html => <app-root></app-root>(browser does not understand now main.ts comes in pic with app config)
 Comp-decorator =>PIE_BC_DE_TSS
 
+
+
+Micro Frontend [MFE] with module federation in webpack 5 
+----------------------------------------------
+types :  Mono repo [shell app [header code as MFE hosted at 4300]=>consume header code   => host app hosted at 4200] => Micro frontend [sharing code from one server to another server with same repo]
+		mutli repo [we can have two or more repo [shell app with header code at MFE 4300 repo] [host application at 4200 with repo2 ]]
+		
+ng new mono-workspace --create-application=false
+ng g application host-app --routing --style=scss
+ng g application mfe-app --routing --style=scss
+ng s host-app -o and ng s mfe-app -o 
+npm i webpack webpack-cli --save-dev
+add MFE ng add @angular-architects/module-federation --project host-app --port 4200 X
+npm install --save-dev @angular-builders/custom-webpack @module-federation/enhanced
+
