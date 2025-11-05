@@ -48,7 +48,7 @@ angular.json file is the central configuration file for an Angular CLI-based pro
 
 bootstrapApplication(App, appConfig)=> added providers  and use comp decorator to load app component 
 index.html => <app-root></app-root>(browser does not understand now main.ts comes in pic with app config)
-Comp-decorator =>PIE_BC_DE_TSS
+Comp-decorator =>PIE_BCD_TSS
 
 
 
