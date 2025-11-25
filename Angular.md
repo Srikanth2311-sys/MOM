@@ -67,9 +67,6 @@ Component = Selector + Template + Styles + Class + Inputs + Outputs + Bindings.
 
 Micro Frontend [MFE] with module federation in webpack 5 
 ----------------------------------------------
-
-# 🧩 **Angular MFE Cheat Sheet — One-Line Version (Improved)**
-
 ### **Monorepo**
 
 One repo with multiple Angular apps (Host 4200 + Remote 4300) sharing workspace and loading MFEs via Module Federation.
