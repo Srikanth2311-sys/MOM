@@ -42,13 +42,26 @@ It helps for complex projects
 - Date/time formatting and manipulation  
 
 ---
-Angular Esstentials:
-tsconfig.json file is the central configuration file that tells the TypeScript compiler how to compile your Angular application's code, where to find the files, and what features to include or exclude.
-angular.json file is the central configuration file for an Angular CLI-based project, defining the workspace, project, and architect configurations, as well as the schematics and CLI settings. It's a crucial file for managing the build, serve, test, and other tasks in your Angular application.
+🌟 Angular Essentials –
+✅ tsconfig.json
 
-bootstrapApplication(App, appConfig)=> added providers  and use comp decorator to load app component 
-index.html => <app-root></app-root>(browser does not understand now main.ts comes in pic with app config)
-Comp-decorator =>PIE_BCD_TSS
+Controls how TypeScript compiles your Angular code.
+
+✅ angular.json
+
+Controls how Angular CLI builds, serves, and configures your project.
+
+✅ bootstrapApplication(AppComponent, appConfig)
+
+Starts the standalone Angular app and loads global providers/config.
+
+✅ Browser Load Flow
+
+Browser loads index.html → main.ts → bootstrapApplication → AppComponent.
+
+✅ @Component Decorator (PIE_BCD_TSS)
+
+Component = Selector + Template + Styles + Class + Inputs + Outputs + Bindings.
 
 
 
