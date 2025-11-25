@@ -1,81 +1,84 @@
-## **Effective Leadership**
 
-**Ability to identify untapped potential in others and develop them.**
+## **1. Effective Leadership**
 
----
-
-## **Core Elements of Leadership**
-
-* **Purpose**
-* **Vision**
-* **Values**
+**Identifying hidden potential in people and helping them grow.**
 
 ---
 
-## **Emotional Intelligence (EQ)**
+## **2. Core Elements**
 
-1. **Self-awareness**
-2. **Self-regulation**
-3. **Motivation**
-4. **Empathy**
-5. **Social skills**
+* **Purpose** – Why we exist
+* **Vision** – Where we want to go
+* **Values** – How we behave
 
 ---
 
-## **Hire Differently**
+## **3. Emotional Intelligence (EQ)**
 
-* Look beyond technical skills.
-* Focus on **non-trainable and transferable qualities** such as:
+**(How leaders understand & manage emotions)**
 
-  * Honesty
-  * Integrity
-  * Work ethic
-* Skills can be taught; **character cannot**.
-
----
-
-## **Be Flexible / Situational Leadership**
-
-(Adjust your style based on the person and the situation)
-
-1. **Directing**
-2. **Coaching**
-3. **Supporting**
-4. **Delegating**
+1. **Self-awareness** – Know your feelings
+2. **Self-regulation** – Control reactions
+3. **Motivation** – Inner drive to improve
+4. **Empathy** – Understand others
+5. **Social Skills** – Build relationships
 
 ---
 
-## **Foster Trust & Confidence**
+## **4. Hiring Mindset**
 
-* Keep commitments
-* Show consistency
-* Encourage psychological safety
+**Hire for attitude, train for skills.**
+Look for:
+
+* Honesty
+* Integrity
+* Work ethic
+
+**Skill can be taught; character cannot.**
 
 ---
 
-## **Communicate with Transparency & Influence**
+## **5. Situational Leadership**
 
-* Clear communication
+**Use the right style depending on employee maturity.**
+
+1. **Directing** – Tell clearly
+2. **Coaching** – Teach + guide
+3. **Supporting** – Encourage
+4. **Delegating** – Full ownership
+
+---
+
+## **6. Building Trust**
+
+* Keep promises
+* Be consistent
+* No blame culture
+* Safe space to speak
+
+---
+
+## **7. Transparent Communication**
+
 * Share information openly
-* Influence through clarity and trust
+* Clear, simple messages
+* Influence through clarity & logic
 
 ---
 
-## **Inspire and Appreciate Your Team**
+## **8. Inspire & Appreciate**
 
-* Recognize achievements
-* Celebrate progress
-* Encourage continuous learning
-
----
-
-## **Leadership Theories**
-
-* **Trait Theory** – Leaders are born with certain qualities
-* **Behavioral Theory** – Leadership comes from learned behaviors
-* **Transactional Leadership** – Based on rewards and punishments
-* **Transformational Leadership** – Inspires and motivates teams to grow
-* **Servant Leadership** – Leader serves the team first
-* **Empathic Leadership** – Understands feelings, builds strong relationships
+* Recognize efforts
+* Celebrate wins
+* Encourage learning
 
 ---
+
+## **9. Leadership Theories (Quick Notes)**
+
+* **Trait Theory** – Born qualities
+* **Behavioral Theory** – Learned behavior
+* **Transactional** – Reward & punishment
+* **Transformational** – Inspire & grow
+* **Servant** – Leader serves team
+* **Empathic** – Lead with understanding
