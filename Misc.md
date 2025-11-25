@@ -16,6 +16,7 @@
 
 ### **TOON**
 
-`users:[{id:1,name:Ram},{id:2,name:Sam}];`
+users[2]{id,name,role}: 1,Aman,admin; 2,Karan,user
+
 
 
