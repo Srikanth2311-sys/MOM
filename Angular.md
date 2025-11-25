@@ -67,14 +67,47 @@ Component = Selector + Template + Styles + Class + Inputs + Outputs + Bindings.
 
 Micro Frontend [MFE] with module federation in webpack 5 
 ----------------------------------------------
-types :  Mono repo [shell app [header code as MFE hosted at 4300]=>consume header code   => host app hosted at 4200] => Micro frontend [sharing code from one server to another server with same repo]
-		mutli repo [we can have two or more repo [shell app with header code at MFE 4300 repo] [host application at 4200 with repo2 ]]
-		
-ng new mono-workspace --create-application=false
-ng g application host-app --routing --style=scss
-ng g application mfe-app --routing --style=scss
-ng s host-app -o and ng s mfe-app -o 
-npm i webpack webpack-cli --save-dev
-add MFE ng add @angular-architects/module-federation --project host-app --port 4200 X
-npm install --save-dev @angular-builders/custom-webpack @module-federation/enhanced
+
+# 🧩 **Angular MFE Cheat Sheet — One-Line Version (Improved)**
+
+### **Monorepo**
+
+One repo with multiple Angular apps (Host 4200 + Remote 4300) sharing workspace and loading MFEs via Module Federation.
+
+### **Micro Frontend (MFE)**
+
+Architecture where independent Angular apps expose features and are dynamically loaded by a host at runtime.
+
+### **Multi-repo**
+
+Host and MFE live in separate repos (Host 4200, Remote 4300) but connect using Webpack Module Federation.
+
+---
+
+### **Create Workspace**
+
+`ng new mono-workspace --create-application=false` → creates empty Angular workspace for multiple apps.
+
+### **Generate Apps**
+
+`ng g application host-app` + `ng g application mfe-app` → creates Host and MFE apps inside workspace.
+
+### **Serve Apps**
+
+`ng s host-app --port 4200` + `ng s mfe-app --port 4300` → run Host and Remote apps locally.
+
+---
+
+### **Add Module Federation (Recommended)**
+
+`ng add @angular-architects/module-federation --project host-app` and same for mfe → auto-configures host + remote federation.
+
+---
+
+### **Optional Advanced Webpack**
+
+`npm i -D webpack webpack-cli @angular-builders/custom-webpack @module-federation/enhanced` → enables custom webpack + enhanced federation.
+
+---.
+
 
