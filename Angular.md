@@ -42,26 +42,21 @@ It helps for complex projects
 - Date/time formatting and manipulation  
 
 ---
-🌟 Angular Essentials –
-✅ tsconfig.json
+- **Angular Essentials** → Components handle user events and render/update UI
+- **tsconfig.json** → Defines TypeScript compiler rules and TypeScript-to-JavaScript conversion
+- **angular.json** → Controls how Angular CLI builds, serves, tests, and deploys the app
+- **App bootstrap flow** → `index.html` loads `main.ts`, which bootstraps the app and loads `AppComponent`
+- **Component decorator** → Identifies a class as a component and links it to HTML, CSS, and data
+- **PIE_BCD_TSS mapping** → Providers, Imports, Exports, Bootstrap, Declarations belong to `@NgModule`, while Component, Template, Styles, Selector belong to `@Component`
+- **App types** → Module-based apps use NgModules, while standalone apps work without modules
+- **Data binding** → Interpolation `{{ }}` accesses public properties, and property binding uses `[src]`
+- **Getter usage** → `get userImagePath()` can be accessed directly in the template
+- **Event binding** → User events are handled using `(click)="onSelectUser()"`
+- **zone.js** → Triggers change detection by notifying Angular of user events and timers
+- **Signals** → Manage state and change detection, updated via `set()` and accessed as functions in templates
+- **Signals vs zone.js** → Signals update only affected components instead of the entire app
+- **Computed signal** → `imagePath = computed(() => 'assets/users/' + this.selectedUser().avatar)` recomputes only when the signal changes
 
-Controls how TypeScript compiles your Angular code.
-
-✅ angular.json
-
-Controls how Angular CLI builds, serves, and configures your project.
-
-✅ bootstrapApplication(AppComponent, appConfig)
-
-Starts the standalone Angular app and loads global providers/config.
-
-✅ Browser Load Flow
-
-Browser loads index.html → main.ts → bootstrapApplication → AppComponent.
-
-✅ @Component Decorator (PIE_BCD_TSS)
-
-Component = Selector + Template + Styles + Class + Inputs + Outputs + Bindings.
 
 
 
