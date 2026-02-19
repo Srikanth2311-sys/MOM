@@ -109,4 +109,32 @@ Host and MFE live in separate repos (Host 4200, Remote 4300) but connect using W
 
 ---.
 
+Folder Structure varies from version to version, it consists src folder with configuration files like tsconfig.json, angular.json
+for newly version it creates public folder with fav.icon file, in older version its does not , there many other small chnages like .componet suffix . 
+tsconfig.json: mainly used to convert typescript to JS using underlaying Angular cli.
+angular.json: mainly used to build, server, test and deploy the application.
+all the source code exsists in src folder => App bootstrap → index.html → main.ts → bootstraps AppComponent => loads app component
+---
+In App component we use decorator for class, property ,method ,parameter and Query 
+decorator => tells what class function or property should represents 
+Class decorator =>@Component,@Pipe,@Directive,@Injectable,@NgModule.
+Property decorator => @Input @Output ,@HostBinding
+Method Decorators => @HostListener, custom method decorators[lifecycle hooks aren't decorators].
+Parameter Decorators=> @Inject, @Optional,@Self, @SkipSelf,@Host
+Query Decorators=>@ViewChild,@ViewChildren, @ContentChild, @ContentChildren
+@EnvironmentInjector, @Attribute(),@ViewContainerRef
+-----
+@Component({configuration object }) [make component to link html/css/logic]
+Selector => it is identifier used in html file
+standalone: true, Self-contained  without registering ngmodule
+templateURL :refer to markup and styleurl => it refer to css file.
+imports : imports child components
+--
 
+String interpolation => {{userSelected.name}} => userSelected =DUMMY_USERS[Math.floor(Math.random() * DUMMY_USERS.length)];
+PropertyBinding =><img [src]="imagePath"> => get imagePath() { return `assets/users/${this.userSelected.avatar}`; }
+event listener =>  <button (click)="onSelectUser()"> =>onSelectUser = () => console.log("clicked")
+zone js listen to events check change detection completely, now we can use signal get subscribe on val change.
+signal <span>{{ userSelected().name }}</span>  => userSelected =signal(DUMMY_USERS[randomUser]); =>set ,computed()
+[C]@Input({required: true}) avatar!: string; => [P]=> <app-user [avatar]="users[2].avatar"></app-user>  [P]=>  users = DUMMY_USERS;
+instead Input as signal import input from ngcore =>[C]avatar =input<String>('test');=> [P]<app-user [avatar]="users[2].avatar"></app-user>
