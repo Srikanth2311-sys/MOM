@@ -1,0 +1,30 @@
+Gen AI creates new content,reactive with prompt u have given . Like. Lang graph lang chain , lama index , grok ,open ai .
+
+
+as llm cannot connect to the internet so it cannot tell info,  like company profile .
+
+Now external data source  or api Tavily llm calls Tavily using a tool call  .
+
+AI Agents:    now as users want to get the response from the  internet or datasurce ..llm connect to api or. Tavily provides the response.
+
+
+
+
+Agentic AI:  if you have  a  task create multi task  similar use agents
+ Plan coding testing agents.
+
+Example create  yt video to blog . 
+Now all agents are connected and create a Blog..
+
+RAG:calls LLM with prompt where vector (text to vector )data base  exists in middle return content  with combine prompt sends llm .we get output 
+
+Agentic RAG: here we have multiple Vector  databases , we get query now agent will transfer respective vector db or another llm and gets output.
+
+Agents routes to vector db.or llm
+
+MCP usb port .. protocal in muti agent if u want connect multiple data sources if   any data source change api request now u update. Integration code..
+
+
+LLM connects MCP ALL DATASURCES
+
+MCP host vs code = MCP client MCP server (code repo db api)
