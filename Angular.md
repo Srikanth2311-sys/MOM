@@ -1,8 +1,5 @@
 Angular Project – Quick Reference README
 
-This document gives you a structured overview of Angular project setup, core configuration, decorators, bindings, signals, and lifecycle.
-
-
 ---
 
 1. Project Structure
