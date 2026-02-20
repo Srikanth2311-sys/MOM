@@ -1,7 +1,6 @@
 Angular Project – Quick Reference README
 
 ---
-
 1. Project Structure
 
 Folder structure may vary depending on Angular version.
