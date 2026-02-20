@@ -1,154 +1,389 @@
-### 🧩 What  
-**Angular**: JS frontend framework  
-- Collection of pkgs and rules  
-- Collection of tools [CLI, debugging tools, IDE, plugins]
+Angular Project – Quick Reference README
 
----
-
-### ❓ Why  
-It helps for complex projects  
-- Declarative code focuses only on describing what should change in the UI, rather than how — unlike imperative code which requires step-by-step instructions  
-- Separation of concerns via components  
-- OOPS concepts and principle [DI/classes]  
-- Use TypeScript  
-
----
-
-### 🔄 Angular Evolution  
-- Stable framework with strong **backward compatibility**  
-- **Angular 14 & 15 (2022)**: Introduced **standalone components**  
-- **Angular 16**: Introduced **signals** for reactive state management  
-
----
-
-### 🚀 Creating a New Angular Project  
-- You **cannot** create plain `.html` and `.js` files manually — Angular uses its own structure  
-- Install Angular CLI globally:
-  ```bash
-  npm install -g @angular/cli
-  ```
-- Create a new project:
-  ```bash
-  ng new first-app
-  ```
-
----
-
-### 🛠️ Utility Libraries  
-**Lodash**: Data Manipulation  
-- Utility functions for arrays, objects, and more  
-
-**Moment.js / Day.js**:  
-- Date/time formatting and manipulation  
-
----
-* **Angular Essentials** → Components handle user events and render/update the UI
-* **tsconfig.json** → Defines TypeScript compiler rules and TypeScript-to-JavaScript conversion
-* **angular.json** → Controls how Angular CLI builds, serves, tests, and deploys the app
-* **App bootstrap flow** → `index.html` → `main.ts` → bootstraps `AppComponent`
-* **Component decorator** → Marks a class as a component and links HTML, CSS, and logic
-* **PIE_BCD_TSS mapping** → `Providers, Imports, Exports, Bootstrap, Declarations` → `@NgModule` | `Template, Styles, Selector` → `@Component`
-* **App types** → Module-based apps use NgModules; standalone apps work without modules
-* **Data binding** → `{{ }}` for interpolation, `[property]` for property binding
-* **Getter usage** → `get userImagePath()` is accessed directly in templates
-* **Event binding** → User actions handled using `(click)="onSelectUser()"`
-* **zone.js** → Triggers global change detection on async events (clicks, timers)
-* **Signals** → Reactive state management; updated via `set()` and read as functions
-* **Signals vs zone.js** → Signals update only affected components, not the whole app
-* **Computed signal** → `computed()` creates derived, cached values that update only when dependencies change
-* **@Input vs input()** → `@Input()` = classic Parent → Child | `input()` = reactive signal-based Parent → Child
-* **computed vs getter** → `computed()` = reactive & cached | `getter` = recalculated on every access
-* **@Output()** → Allows child to emit events/data to the parent
-* **Output binding example** → `(userSelected)="onSelectUser($event)"` listens in parent
-* **@Output declaration** → `@Output() userSelected = new EventEmitter<string>();` or `userSelected = output<string>();`
-* **Emit event** → `this.userSelected.emit(this.id);`
-* **Input example** → `@Input() name!: string;`
-
-
-
-
-Micro Frontend [MFE] with module federation in webpack 5 
-----------------------------------------------
-### **Monorepo**
-
-One repo with multiple Angular apps (Host 4200 + Remote 4300) sharing workspace and loading MFEs via Module Federation.
-
-### **Micro Frontend (MFE)**
-
-Architecture where independent Angular apps expose features and are dynamically loaded by a host at runtime.
-
-### **Multi-repo**
-
-Host and MFE live in separate repos (Host 4200, Remote 4300) but connect using Webpack Module Federation.
-
----
-
-### **Create Workspace**
-
-`ng new mono-workspace --create-application=false` → creates empty Angular workspace for multiple apps.
-
-### **Generate Apps**
-
-`ng g application host-app` + `ng g application mfe-app` → creates Host and MFE apps inside workspace.
-
-### **Serve Apps**
-
-`ng s host-app --port 4200` + `ng s mfe-app --port 4300` → run Host and Remote apps locally.
-
----
-
-### **Add Module Federation (Recommended)**
-
-`ng add @angular-architects/module-federation --project host-app` and same for mfe → auto-configures host + remote federation.
-
----
-
-### **Optional Advanced Webpack**
-
-`npm i -D webpack webpack-cli @angular-builders/custom-webpack @module-federation/enhanced` → enables custom webpack + enhanced federation.
-
----.
-
-Folder Structure varies from version to version, it consists src folder with configuration files like tsconfig.json, angular.json
-for newly version it creates public folder with fav.icon file, in older version its does not , there many other small chnages like .componet suffix . 
-tsconfig.json: mainly used to convert typescript to JS using underlaying Angular cli.
-angular.json: mainly used to build, server, test and deploy the application.
-all the source code exsists in src folder => App bootstrap → index.html → main.ts → bootstraps AppComponent => loads app component
----
-In App component we use decorator for class, property ,method ,parameter and Query 
-decorator => tells what class function or property should represents 
-Class decorator =>@Component,@Pipe,@Directive,@Injectable,@NgModule.
-Property decorator => @Input @Output ,@HostBinding
-Method Decorators => @HostListener, custom method decorators[lifecycle hooks aren't decorators].
-Parameter Decorators=> @Inject, @Optional,@Self, @SkipSelf,@Host
-Query Decorators=>@ViewChild,@ViewChildren, @ContentChild, @ContentChildren
-@EnvironmentInjector, @Attribute(),@ViewContainerRef
------
-@Component({configuration object }) [make component to link html/css/logic]
-Selector => it is identifier used in html file
-standalone: true, Self-contained  without registering ngmodule
-templateURL :refer to markup and styleurl => it refer to css file.
-imports : imports child components
---
-
-String interpolation => {{userSelected.name}} => userSelected =DUMMY_USERS[Math.floor(Math.random() * DUMMY_USERS.length)];
-PropertyBinding =><img [src]="imagePath"> => get imagePath() { return `assets/users/${this.userSelected.avatar}`; }
-event listener =>  <button (click)="onSelectUser()"> =>onSelectUser = () => console.log("clicked")
-zone js listen to events check change detection completely, now we can use signal get subscribe on val change.
-signal <span>{{ userSelected().name }}</span>  => userSelected =signal(DUMMY_USERS[randomUser]); =>set ,computed()
-[C]@Input({required: true}) avatar!: string; => [P]=> <app-user [avatar]="users[2].avatar"></app-user>  [P]=>  users = DUMMY_USERS;
-instead Input as signal import input from ngcore =>[C]avatar =input<String>('test');=> [P]<app-user [avatar]="users[2].avatar"></app-user>
+This document gives you a structured overview of Angular project setup, core configuration, decorators, bindings, signals, and lifecycle.
 
 
 ---
-Life cycle of angular 
-Construtor
-Ng on change 
-Init
-Do check 
-Afteconteht rinit
-After content checked
-Afterviewinit
-After view checked
-Ng destroy 
-----
+
+1. Project Structure
+
+Folder structure may vary depending on Angular version.
+
+Root Level Files
+
+angular.json
+
+tsconfig.json
+
+package.json
+
+src/
+
+public/ (newer versions)
+
+
+Version Differences
+
+Newer Angular versions create a public/ folder that includes favicon.ico.
+
+Older versions placed assets differently.
+
+Minor naming updates such as .component suffix improvements and structural refinements.
+
+
+
+---
+
+2. Important Configuration Files
+
+tsconfig.json
+
+Used to configure TypeScript compilation.
+
+Converts TypeScript to JavaScript
+
+Managed internally by Angular CLI
+
+Controls strict mode, target version, module system
+
+
+angular.json
+
+Controls Angular CLI behavior.
+
+Used for:
+
+Build
+
+Serve
+
+Test
+
+Deploy
+
+Assets configuration
+
+Environment configuration
+
+
+
+---
+
+3. Application Bootstrap Flow
+
+All source code exists inside the src/ folder.
+
+Application startup sequence:
+
+index.html
+   ↓
+main.ts
+   ↓
+bootstrapApplication() or bootstrapModule()
+   ↓
+AppComponent loads
+
+Flow Explanation:
+
+1. index.html is the entry HTML file.
+
+
+2. main.ts bootstraps the Angular application.
+
+
+3. AppComponent becomes the root component.
+
+
+4. Angular renders the component tree.
+
+
+
+
+---
+
+4. Angular Decorators
+
+Decorators define metadata and behavior for classes and members.
+
+What is a Decorator?
+
+A decorator tells Angular what a class, method, property, or parameter represents.
+
+
+---
+
+4.1 Class Decorators
+
+Used on classes.
+
+@Component
+
+@Directive
+
+@Pipe
+
+@Injectable
+
+@NgModule
+
+
+
+---
+
+4.2 Property Decorators
+
+Used on class properties.
+
+@Input
+
+@Output
+
+@HostBinding
+
+
+
+---
+
+4.3 Method Decorators
+
+Used on methods.
+
+@HostListener
+
+
+Note: Lifecycle hooks are not decorators. They are interface methods.
+
+
+---
+
+4.4 Parameter Decorators
+
+Used in constructor parameters.
+
+@Inject
+
+@Optional
+
+@Self
+
+@SkipSelf
+
+@Host
+
+@Attribute
+
+
+
+---
+
+4.5 Query Decorators
+
+Used to access template elements.
+
+@ViewChild
+
+@ViewChildren
+
+@ContentChild
+
+@ContentChildren
+
+
+
+---
+
+4.6 Other Core APIs
+
+EnvironmentInjector
+
+ViewContainerRef
+
+
+
+---
+
+5. Component Configuration
+
+Example:
+
+@Component({
+  selector: 'app-user',
+  standalone: true,
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css'],
+  imports: []
+})
+
+Configuration Properties
+
+selector
+Custom HTML tag used in templates.
+
+standalone: true
+Makes component self-contained without NgModule.
+
+templateUrl
+Refers to HTML file.
+
+styleUrls
+Refers to CSS file.
+
+imports
+Imports child components or directives.
+
+
+
+---
+
+6. Data Binding
+
+Angular supports multiple binding types.
+
+
+---
+
+6.1 String Interpolation
+
+<span>{{ userSelected.name }}</span>
+
+userSelected = DUMMY_USERS[Math.floor(Math.random() * DUMMY_USERS.length)];
+
+Used to display data in template.
+
+
+---
+
+6.2 Property Binding
+
+<img [src]="imagePath">
+
+get imagePath() {
+  return `assets/users/${this.userSelected.avatar}`;
+}
+
+Binds DOM property to component property.
+
+
+---
+
+6.3 Event Binding
+
+<button (click)="onSelectUser()">
+
+onSelectUser() {
+  console.log('clicked');
+}
+
+Triggers method when event occurs.
+
+
+---
+
+7. Change Detection
+
+Earlier:
+
+Angular uses Zone.js
+
+Listens to async events
+
+Runs full change detection cycle
+
+
+Now:
+
+Signals introduced
+
+More reactive and fine-grained updates
+
+No need to rely completely on Zone.js
+
+
+
+---
+
+8. Angular Signals
+
+Signals provide reactive state management.
+
+Basic Example
+
+import { signal, computed } from '@angular/core';
+
+userSelected = signal(DUMMY_USERS[randomUser]);
+
+userSelected.set(newValue);
+
+const username = computed(() => userSelected().name);
+
+Template usage:
+
+<span>{{ userSelected().name }}</span>
+
+
+---
+
+9. Input Binding
+
+Traditional Input
+
+Child component:
+
+@Input({ required: true }) avatar!: string;
+
+Parent component:
+
+<app-user [avatar]="users[2].avatar"></app-user>
+
+
+---
+
+Input as Signal
+
+Child component:
+
+import { input } from '@angular/core';
+
+avatar = input<string>('default');
+
+Parent:
+
+<app-user [avatar]="users[2].avatar"></app-user>
+
+
+---
+
+10. Angular Lifecycle Hooks
+
+Lifecycle hooks define stages of a component’s life.
+
+Order of execution:
+
+1. constructor
+
+
+2. ngOnChanges
+
+
+3. ngOnInit
+
+
+4. ngDoCheck
+
+
+5. ngAfterContentInit
+
+
+6. ngAfterContentChecked
+
+
+7. ngAfterViewInit
+
+
+8. ngAfterViewChecked
+
+
+9. ngOnDestroy
+
+
+
