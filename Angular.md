@@ -138,3 +138,17 @@ zone js listen to events check change detection completely, now we can use signa
 signal <span>{{ userSelected().name }}</span>  => userSelected =signal(DUMMY_USERS[randomUser]); =>set ,computed()
 [C]@Input({required: true}) avatar!: string; => [P]=> <app-user [avatar]="users[2].avatar"></app-user>  [P]=>  users = DUMMY_USERS;
 instead Input as signal import input from ngcore =>[C]avatar =input<String>('test');=> [P]<app-user [avatar]="users[2].avatar"></app-user>
+
+
+---
+Life cycle of angular 
+Construtor
+Ng on change 
+Init
+Do check 
+Afteconteht rinit
+After content checked
+Afterviewinit
+After view checked
+Ng destroy 
+----
