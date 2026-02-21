@@ -347,6 +347,19 @@ Parent:
 <app-user [avatar]="users[2].avatar"></app-user>
 
 
+parent
+<app-user (selected)="handleSelected($event)"></app-user> => 
+handleSelected(userId: string) {
+  console.log('Selected (classic output):', userId);
+}
+child 
+<button  (click)="onSelectUser()">
+  @Output() userSelected = new EventEmitter<string>();
+selectedUserId = output<string>({ alias: 'selected', description: 'Emits when user is selected' });
+ onSelectUser(){
+   this.userSelected.emit(this.id);
+   this.selectedUserId.emit(this.id);
+  }
 ---
 
 10. Angular Lifecycle Hooks
